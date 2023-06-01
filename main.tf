@@ -65,41 +65,41 @@ resource "azurerm_kubernetes_cluster" "this" {
             for_each = try(linux_os_config.value.sysctl_config, [])
             content {
               fs_aio_max_nr                      = try(sysctl_config.value.fs_aio_max_nr, null)
-              fs_file_max                        = try(sysctl_config.value.fs_aio_max_nr, null)
-              fs_inotify_max_user_watches        = try(sysctl_config.value.fs_aio_max_nr, null)
-              fs_nr_open                         = try(sysctl_config.value.fs_aio_max_nr, null)
-              kernel_threads_max                 = try(sysctl_config.value.fs_aio_max_nr, null)
-              net_core_netdev_max_backlog        = try(sysctl_config.value.fs_aio_max_nr, null)
-              net_core_optmem_max                = try(sysctl_config.value.fs_aio_max_nr, null)
-              net_core_rmem_default              = try(sysctl_config.value.fs_aio_max_nr, null)
-              net_core_rmem_max                  = try(sysctl_config.value.fs_aio_max_nr, null)
-              net_core_somaxconn                 = try(sysctl_config.value.fs_aio_max_nr, null)
-              net_core_wmem_default              = try(sysctl_config.value.fs_aio_max_nr, null)
-              net_core_wmem_max                  = try(sysctl_config.value.fs_aio_max_nr, null)
-              net_ipv4_ip_local_port_range_max   = try(sysctl_config.value.fs_aio_max_nr, null)
-              net_ipv4_ip_local_port_range_min   = try(sysctl_config.value.fs_aio_max_nr, null)
-              net_ipv4_neigh_default_gc_thresh1  = try(sysctl_config.value.fs_aio_max_nr, null)
-              net_ipv4_neigh_default_gc_thresh2  = try(sysctl_config.value.fs_aio_max_nr, null)
-              net_ipv4_neigh_default_gc_thresh3  = try(sysctl_config.value.fs_aio_max_nr, null)
-              net_ipv4_tcp_fin_timeout           = try(sysctl_config.value.fs_aio_max_nr, null)
-              net_ipv4_tcp_keepalive_intvl       = try(sysctl_config.value.fs_aio_max_nr, null)
-              net_ipv4_tcp_keepalive_probes      = try(sysctl_config.value.fs_aio_max_nr, null)
-              net_ipv4_tcp_keepalive_time        = try(sysctl_config.value.fs_aio_max_nr, null)
-              net_ipv4_tcp_max_syn_backlog       = try(sysctl_config.value.fs_aio_max_nr, null)
-              net_ipv4_tcp_max_tw_buckets        = try(sysctl_config.value.fs_aio_max_nr, null)
-              net_ipv4_tcp_tw_reuse              = try(sysctl_config.value.fs_aio_max_nr, null)
-              net_netfilter_nf_conntrack_buckets = try(sysctl_config.value.fs_aio_max_nr, null)
-              net_netfilter_nf_conntrack_max     = try(sysctl_config.value.fs_aio_max_nr, null)
-              vm_max_map_count                   = try(sysctl_config.value.fs_aio_max_nr, null)
-              vm_swappiness                      = try(sysctl_config.value.fs_aio_max_nr, null)
-              vm_vfs_cache_pressure              = try(sysctl_config.value.fs_aio_max_nr, null)
+              fs_file_max                        = try(sysctl_config.value.fs_file_max, null)
+              fs_inotify_max_user_watches        = try(sysctl_config.value.fs_inotify_max_user_watches, null)
+              fs_nr_open                         = try(sysctl_config.value.fs_nr_open, null)
+              kernel_threads_max                 = try(sysctl_config.value.kernel_threads_max, null)
+              net_core_netdev_max_backlog        = try(sysctl_config.value.net_core_netdev_max_backlog, null)
+              net_core_optmem_max                = try(sysctl_config.value.net_core_optmem_max, null)
+              net_core_rmem_default              = try(sysctl_config.value.net_core_rmem_default, null)
+              net_core_rmem_max                  = try(sysctl_config.value.net_core_rmem_max, null)
+              net_core_somaxconn                 = try(sysctl_config.value.net_core_somaxconn, null)
+              net_core_wmem_default              = try(sysctl_config.value.net_core_wmem_default, null)
+              net_core_wmem_max                  = try(sysctl_config.value.net_core_wmem_max, null)
+              net_ipv4_ip_local_port_range_max   = try(sysctl_config.value.net_ipv4_ip_local_port_range_max, null)
+              net_ipv4_ip_local_port_range_min   = try(sysctl_config.value.net_ipv4_ip_local_port_range_min, null)
+              net_ipv4_neigh_default_gc_thresh1  = try(sysctl_config.value.net_ipv4_neigh_default_gc_thresh1, null)
+              net_ipv4_neigh_default_gc_thresh2  = try(sysctl_config.value.net_ipv4_neigh_default_gc_thresh2, null)
+              net_ipv4_neigh_default_gc_thresh3  = try(sysctl_config.value.net_ipv4_neigh_default_gc_thresh3, null)
+              net_ipv4_tcp_fin_timeout           = try(sysctl_config.value.net_ipv4_tcp_fin_timeout, null)
+              net_ipv4_tcp_keepalive_intvl       = try(sysctl_config.value.net_ipv4_tcp_keepalive_intvl, null)
+              net_ipv4_tcp_keepalive_probes      = try(sysctl_config.value.net_ipv4_tcp_keepalive_probes, null)
+              net_ipv4_tcp_keepalive_time        = try(sysctl_config.value.net_ipv4_tcp_keepalive_time, null)
+              net_ipv4_tcp_max_syn_backlog       = try(sysctl_config.value.net_ipv4_tcp_max_syn_backlog, null)
+              net_ipv4_tcp_max_tw_buckets        = try(sysctl_config.value.net_ipv4_tcp_max_tw_buckets, null)
+              net_ipv4_tcp_tw_reuse              = try(sysctl_config.value.net_ipv4_tcp_tw_reuse, null)
+              net_netfilter_nf_conntrack_buckets = try(sysctl_config.value.net_netfilter_nf_conntrack_buckets, null)
+              net_netfilter_nf_conntrack_max     = try(sysctl_config.value.net_netfilter_nf_conntrack_max, null)
+              vm_max_map_count                   = try(sysctl_config.value.vm_max_map_count, null)
+              vm_swappiness                      = try(sysctl_config.value.vm_swappiness, null)
+              vm_vfs_cache_pressure              = try(sysctl_config.value.vm_vfs_cache_pressure, null)
             }
           }
         }
       }
       fips_enabled       = try(default_node_pool.value.fips_enabled, null)
       kubelet_disk_type  = try(default_node_pool.value.kubelet_disk_type, "OS")
-      max_pods           = try(default_node_pool.value.max_pods, 110)
+      max_pods           = try(default_node_pool.value.max_pods, 50)
       message_of_the_day = try(default_node_pool.value.message_of_the_day, null)
       dynamic "node_network_profile" {
         for_each = try(default_node_pool.value.node_network_profile, [])
@@ -113,15 +113,15 @@ resource "azurerm_kubernetes_cluster" "this" {
       node_taints                  = try(default_node_pool.value.node_taints, [])
       only_critical_addons_enabled = try(default_node_pool.value.only_critical_addons_enabled, null)
       orchestrator_version         = try(default_node_pool.value.orchestrator_version, null)
-      os_disk_size_gb              = try(default_node_pool.value.orchestrator_version, 100)
-      os_disk_type                 = try(default_node_pool.value.orchestrator_version, "Managed")
-      os_sku                       = try(default_node_pool.value.orchestrator_version, "Ubuntu")
-      pod_subnet_id                = try(default_node_pool.value.orchestrator_version, null)
-      proximity_placement_group_id = try(default_node_pool.value.orchestrator_version, null)
-      scale_down_mode              = try(default_node_pool.value.orchestrator_version, "Delete")
-      temporary_name_for_rotation  = try(default_node_pool.value.orchestrator_version, null)
-      type                         = try(default_node_pool.value.orchestrator_version, "VirtualMachineScaleSets")
-      tags                         = try(default_node_pool.value.tags, {})
+      os_disk_size_gb              = try(default_node_pool.value.os_disk_size_gb, 100)
+      os_disk_type                 = try(default_node_pool.value.os_disk_type, "Managed")
+      os_sku                       = try(default_node_pool.value.os_sku, "Ubuntu")
+      pod_subnet_id                = try(default_node_pool.value.pod_subnet_id, null)
+      proximity_placement_group_id = try(default_node_pool.value.proximity_placement_group_id, null)
+      scale_down_mode              = try(default_node_pool.value.scale_down_mode, "Delete")
+      temporary_name_for_rotation  = try(default_node_pool.value.temporary_name_for_rotation, null)
+      type                         = try(default_node_pool.value.type, "VirtualMachineScaleSets")
+      tags                         = var.tags
       ultra_ssd_enabled            = try(default_node_pool.value.ultra_ssd_enabled, false)
 
       dynamic "upgrade_settings" {
@@ -135,7 +135,7 @@ resource "azurerm_kubernetes_cluster" "this" {
       zones            = try(default_node_pool.value.zones, [])
       max_count        = try(default_node_pool.value.max_count, null)
       min_count        = try(default_node_pool.value.min_count, null)
-      node_count       = try(default_node_pool.value.node_count, 3)
+      node_count       = try(default_node_pool.value.enable_auto_scaling, true) ? try(default_node_pool.value.min_count, 1) : 1
 
     }
   }
@@ -174,19 +174,19 @@ resource "azurerm_kubernetes_cluster" "this" {
       expander                         = try(auto_scaler_profile.value.expander, "random")
       max_graceful_termination_sec     = try(auto_scaler_profile.value.max_graceful_termination_sec, 600)
       max_node_provisioning_time       = try(auto_scaler_profile.value.max_node_provisioning_time, "15m")
-      max_unready_nodes                = try(auto_scaler_profile.value.max_unready_nodes, 3)
+      max_unready_nodes                = try(auto_scaler_profile.value.max_unready_nodes, 1)
       max_unready_percentage           = try(auto_scaler_profile.value.max_unready_percentage, 45)
       new_pod_scale_up_delay           = try(auto_scaler_profile.value.new_pod_scale_up_delay, "10s")
       scale_down_delay_after_add       = try(auto_scaler_profile.value.scale_down_delay_after_add, "10m")
       scale_down_delay_after_delete    = try(auto_scaler_profile.value.scale_down_delay_after_delete, "10s")
       scale_down_delay_after_failure   = try(auto_scaler_profile.value.scale_down_delay_after_failure, "3m")
       scan_interval                    = try(auto_scaler_profile.value.scan_interval, "10s")
-      scale_down_unneeded              = try(auto_scaler_profile.value.scale_down_unneeded, false)
-      scale_down_unready               = try(auto_scaler_profile.value.scale_down_unready, false)
-      scale_down_utilization_threshold = try(auto_scaler_profile.value.scale_down_utilization_threshold, false)
-      empty_bulk_delete_max            = try(auto_scaler_profile.value.empty_bulk_delete_max, false)
-      skip_nodes_with_local_storage    = try(auto_scaler_profile.value.skip_nodes_with_local_storage, false)
-      skip_nodes_with_system_pods      = try(auto_scaler_profile.value.skip_nodes_with_system_pods, false)
+      scale_down_unneeded              = try(auto_scaler_profile.value.scale_down_unneeded, "10m")
+      scale_down_unready               = try(auto_scaler_profile.value.scale_down_unready, "20m")
+      scale_down_utilization_threshold = try(auto_scaler_profile.value.scale_down_utilization_threshold, "0.5")
+      empty_bulk_delete_max            = try(auto_scaler_profile.value.empty_bulk_delete_max, "10")
+      skip_nodes_with_local_storage    = try(auto_scaler_profile.value.skip_nodes_with_local_storage, true)
+      skip_nodes_with_system_pods      = try(auto_scaler_profile.value.skip_nodes_with_system_pods, true)
 
     }
 
@@ -239,19 +239,12 @@ resource "azurerm_kubernetes_cluster" "this" {
 
   dynamic "ingress_application_gateway" {
     for_each = var.ingress_application_gateway
+
     content {
-      effective_gateway_id = try(ingress_application_gateway.value.effective_gateway_id)
-
-      dynamic "ingress_application_gateway_identity" {
-        for_each = try(ingress_application_gateway.value.ingress_application_gateway_identity, [])
-        content {
-          client_id                 = try(ingress_application_gateway_identity.value.client_id)
-          object_id                 = try(ingress_application_gateway_identity.value.object_id)
-          user_assigned_identity_id = try(ingress_application_gateway_identity.value.user_assigned_identity_id)
-        }
-      }
-
-
+      gateway_id   = try(ingress_application_gateway.value.gateway_id, null)
+      gateway_name = try(ingress_application_gateway.value.gateway_name, null)
+      subnet_cidr  = try(ingress_application_gateway.value.subnet_cidr, null)
+      subnet_id    = try(ingress_application_gateway.value.subnet_id, null)
     }
   }
 
@@ -343,7 +336,7 @@ resource "azurerm_kubernetes_cluster" "this" {
       dns_service_ip      = try(network_profile.value.dns_service_ip, null)
       docker_bridge_cidr  = try(network_profile.value.docker_bridge_cidr, null)
       ebpf_data_plane     = try(network_profile.value.ebpf_data_plane, null)
-      network_plugin_mode = try(network_profile.value.network_plugin_mode, "Overlay")
+      network_plugin_mode = try(network_profile.value.network_plugin_mode, null)
       outbound_type       = try(network_profile.value.outbound_type, null)
       pod_cidr            = try(network_profile.value.pod_cidr, null)
       pod_cidrs           = try(network_profile.value.pod_cidrs, [])
@@ -351,6 +344,7 @@ resource "azurerm_kubernetes_cluster" "this" {
       service_cidrs       = try(network_profile.value.service_cidrs, [])
       ip_versions         = try(network_profile.value.ip_versions, null)
       load_balancer_sku   = try(network_profile.value.load_balancer_sku, "standard")
+
       dynamic "load_balancer_profile" {
         for_each = try(network_profile.value.load_balancer_profile, [])
 
@@ -385,7 +379,7 @@ resource "azurerm_kubernetes_cluster" "this" {
     for_each = var.oms_agent
     content {
       log_analytics_workspace_id      = try(oms_agent.value.log_analytics_workspace_id)
-      msi_auth_for_monitoring_enabled = try(oms_agent.value.msi_auth_for_monitoring_enabled)
+      msi_auth_for_monitoring_enabled = try(oms_agent.value.msi_auth_for_monitoring_enabled, false)
     }
   }
 
@@ -427,19 +421,163 @@ resource "azurerm_kubernetes_cluster" "this" {
 
   sku_tier = var.sku_tier
 
+  tags = var.tags
+
+  lifecycle {
+    ignore_changes = [
+      # Ignore changes to tags, e.g. because a management agent
+      # updates these based on some ruleset managed elsewhere.
+      network_profile,
+      kubelet_identity,
+    ]
+  }
+
 }
 
-/* # Allow user assigned identity to manage AKS items in RG
-resource "azurerm_role_assignment" "this" {
-  principal_id         = azurerm_kubernetes_cluster.aks.kubelet_identity[0].object_id
+# Allow user assigned identity to manage AKS items in RG
+resource "azurerm_role_assignment" "rg_level" {
+  principal_id         = azurerm_kubernetes_cluster.this[0].kubelet_identity[0].object_id
   scope                = format("/subscriptions/%s/resourceGroups/%s", data.azurerm_subscription.this.subscription_id, var.resource_group_name)
   role_definition_name = "Contributor"
 }
 
-resource "azurerm_role_assignment" "this" {
+resource "azurerm_role_assignment" "vnet_level" {
   count = var.create_aks ? 1 : 0
 
   scope                = var.vnet_id
   role_definition_name = "Network Contributor"
-  principal_id         = azurerm_kubernetes_cluster.aks.kubelet_identity[0].object_id
-}  */
+  principal_id         = azurerm_kubernetes_cluster.this[0].kubelet_identity[0].object_id
+}
+
+
+resource "azurerm_kubernetes_cluster_node_pool" "this" {
+  for_each = var.additional_node_pools
+
+  name                          = each.key
+  kubernetes_cluster_id         = azurerm_kubernetes_cluster.this[0].id
+  vm_size                       = try(each.value.vm_size)
+  capacity_reservation_group_id = try(each.value.capacity_reservation_group_id, null)
+  custom_ca_trust_enabled       = try(each.value.custom_ca_trust_enabled, false)
+  enable_auto_scaling           = try(each.value.enable_auto_scaling, true)
+  enable_host_encryption        = try(each.value.enable_host_encryption, false)
+  enable_node_public_ip         = try(each.value.enable_node_public_ip, false)
+  eviction_policy               = try(each.value.eviction_policy, null)
+  host_group_id                 = try(each.value.host_group_id, null)
+
+  dynamic "kubelet_config" {
+    for_each = try(each.value.kubelet_config, [])
+
+    content {
+      allowed_unsafe_sysctls    = try(kubelet_config.value.allowed_unsafe_sysctls, null)
+      container_log_max_line    = try(kubelet_config.value.container_log_max_line, null)
+      container_log_max_size_mb = try(kubelet_config.value.container_log_max_size_mb, null)
+      cpu_cfs_quota_enabled     = try(kubelet_config.value.cpu_cfs_quota_enabled, null)
+      cpu_cfs_quota_period      = try(kubelet_config.value.cpu_cfs_quota_period, null)
+      cpu_manager_policy        = try(kubelet_config.value.cpu_manager_policy, null)
+      image_gc_high_threshold   = try(kubelet_config.value.image_gc_high_threshold, null)
+      image_gc_low_threshold    = try(kubelet_config.value.image_gc_low_threshold, null)
+      pod_max_pid               = try(kubelet_config.value.pod_max_pid, null)
+      topology_manager_policy   = try(kubelet_config.value.topology_manager_policy, null)
+    }
+
+  }
+
+  dynamic "linux_os_config" {
+    for_each = try(each.value.linux_os_config, [])
+
+    content {
+      swap_file_size_mb             = try(linux_os_config.value.swap_file_size_mb, null)
+      transparent_huge_page_defrag  = try(linux_os_config.value.transparent_huge_page_defrag, null)
+      transparent_huge_page_enabled = try(linux_os_config.value.transparent_huge_page_enabled, null)
+
+      dynamic "sysctl_config" {
+        for_each = try(linux_os_config.value.sysctl_config, [])
+        content {
+          fs_aio_max_nr                      = try(sysctl_config.value.fs_aio_max_nr, null)
+          fs_file_max                        = try(sysctl_config.value.fs_file_max, null)
+          fs_inotify_max_user_watches        = try(sysctl_config.value.fs_inotify_max_user_watches, null)
+          fs_nr_open                         = try(sysctl_config.value.fs_nr_open, null)
+          kernel_threads_max                 = try(sysctl_config.value.kernel_threads_max, null)
+          net_core_netdev_max_backlog        = try(sysctl_config.value.net_core_netdev_max_backlog, null)
+          net_core_optmem_max                = try(sysctl_config.value.net_core_optmem_max, null)
+          net_core_rmem_default              = try(sysctl_config.value.net_core_rmem_default, null)
+          net_core_rmem_max                  = try(sysctl_config.value.net_core_rmem_max, null)
+          net_core_somaxconn                 = try(sysctl_config.value.net_core_somaxconn, null)
+          net_core_wmem_default              = try(sysctl_config.value.net_core_wmem_default, null)
+          net_core_wmem_max                  = try(sysctl_config.value.net_core_wmem_max, null)
+          net_ipv4_ip_local_port_range_max   = try(sysctl_config.value.net_ipv4_ip_local_port_range_max, null)
+          net_ipv4_ip_local_port_range_min   = try(sysctl_config.value.net_ipv4_ip_local_port_range_min, null)
+          net_ipv4_neigh_default_gc_thresh1  = try(sysctl_config.value.net_ipv4_neigh_default_gc_thresh1, null)
+          net_ipv4_neigh_default_gc_thresh2  = try(sysctl_config.value.net_ipv4_neigh_default_gc_thresh2, null)
+          net_ipv4_neigh_default_gc_thresh3  = try(sysctl_config.value.net_ipv4_neigh_default_gc_thresh3, null)
+          net_ipv4_tcp_fin_timeout           = try(sysctl_config.value.net_ipv4_tcp_fin_timeout, null)
+          net_ipv4_tcp_keepalive_intvl       = try(sysctl_config.value.net_ipv4_tcp_keepalive_intvl, null)
+          net_ipv4_tcp_keepalive_probes      = try(sysctl_config.value.net_ipv4_tcp_keepalive_probes, null)
+          net_ipv4_tcp_keepalive_time        = try(sysctl_config.value.net_ipv4_tcp_keepalive_time, null)
+          net_ipv4_tcp_max_syn_backlog       = try(sysctl_config.value.net_ipv4_tcp_max_syn_backlog, null)
+          net_ipv4_tcp_max_tw_buckets        = try(sysctl_config.value.net_ipv4_tcp_max_tw_buckets, null)
+          net_ipv4_tcp_tw_reuse              = try(sysctl_config.value.net_ipv4_tcp_tw_reuse, null)
+          net_netfilter_nf_conntrack_buckets = try(sysctl_config.value.net_netfilter_nf_conntrack_buckets, null)
+          net_netfilter_nf_conntrack_max     = try(sysctl_config.value.net_netfilter_nf_conntrack_max, null)
+          vm_max_map_count                   = try(sysctl_config.value.vm_max_map_count, null)
+          vm_swappiness                      = try(sysctl_config.value.vm_swappiness, null)
+          vm_vfs_cache_pressure              = try(sysctl_config.value.vm_vfs_cache_pressure, null)
+        }
+      }
+    }
+  }
+  fips_enabled       = try(each.value.host_group_id, null)
+  kubelet_disk_type  = try(each.value.kubelet_disk_type, "OS")
+  max_pods           = try(each.value.max_pods, 50)
+  message_of_the_day = try(each.value.message_of_the_day, null)
+  mode               = try(each.value.mode, "System")
+
+  dynamic "node_network_profile" {
+    for_each = try(each.value.node_network_profile, [])
+
+    content {
+      node_public_ip_tags = try(node_network_profile.value.node_public_ip_tags, {})
+    }
+
+  }
+
+  node_labels                  = try(each.value.node_labels, {})
+  node_public_ip_prefix_id     = try(each.value.node_public_ip_prefix_id, null)
+  node_taints                  = try(each.value.node_taints, [])
+  orchestrator_version         = try(each.value.orchestrator_version, null)
+  os_disk_size_gb              = try(each.value.os_disk_size_gb, 30)
+  os_disk_type                 = try(each.value.os_disk_type, "Ephemeral")
+  pod_subnet_id                = try(each.value.pod_subnet_id, null)
+  os_sku                       = try(each.value.os_sku, "Ubuntu")
+  os_type                      = try(each.value.os_type, "Linux")
+  priority                     = try(each.value.priority, "Regular")
+  proximity_placement_group_id = try(each.value.proximity_placement_group_id, null)
+  spot_max_price               = try(each.value.spot_max_price, null)
+  /* snapshot_id                  = try(each.value.snapshot_id, null) */
+  scale_down_mode   = try(each.value.scale_down_mode, "Delete")
+  ultra_ssd_enabled = try(each.value.ultra_ssd_enabled, false)
+
+  dynamic "upgrade_settings" {
+    for_each = try(each.value.upgrade_settings, [])
+    content {
+      max_surge = try(upgrade_settings.value.max_surge)
+    }
+  }
+
+  vnet_subnet_id = try(each.value.vnet_subnet_id)
+
+  dynamic "windows_profile" {
+    for_each = try(each.value.windows_profile, [])
+
+    content {
+      outbound_nat_enabled = try(upgrade_settings.value.outbound_nat_enabled, false)
+    }
+  }
+
+  workload_runtime = try(each.value.workload_runtime, "OCIContainer")
+  zones            = try(each.value.zones, [])
+  max_count        = try(each.value.enable_auto_scaling, true) ? try(each.value.max_count, 4) : null
+  min_count        = try(each.value.enable_auto_scaling, true) ? try(each.value.min_count, 1) : null
+  node_count       = try(each.value.enable_auto_scaling, true) ? try(each.value.min_count, 1) : 1
+  tags             = try(each.value.tags, {})
+}
